@@ -75,4 +75,4 @@ If this material helps your teaching or research, please cite it using the metad
 - **Code:** [MIT](LICENSE).
 - **Figures and videos** in `episodes/*/media`: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Reuse them freely with attribution to Hamidreza Toloueinasab.
 - **Fonts** in `style/fonts`: Fraunces and Inter, both [SIL Open Font License 1.1](style/fonts).
-- **Logo:** the HT monogram (`style/logo*`) is the author's personal mark and is not licensed for reuse.
+- **Logo:** the HT monogram (`style/logo.py`) is the author's personal mark and is not licensed for reuse.
