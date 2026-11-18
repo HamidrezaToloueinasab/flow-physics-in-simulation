@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite it as below."
+title: "Flow Physics in Simulation: reproducible educational simulations in fluid mechanics and heat transfer"
+type: software
+authors:
+  - family-names: Toloueinasab
+    given-names: Hamidreza
+    orcid: "https://orcid.org/0000-0002-3152-6000"
+    affiliation: "University of Tabriz"
+repository-code: "https://github.com/HamidrezaToloueinasab/flow-physics-in-simulation"
+license: MIT
+date-released: "2026-11-18"
+keywords:
+  - computational fluid dynamics
+  - lattice Boltzmann method
+  - vortex shedding
+  - heat transfer
+  - education

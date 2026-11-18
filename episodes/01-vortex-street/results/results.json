@@ -1,0 +1,28 @@
+{
+  "grid": [
+    1200,
+    600
+  ],
+  "D": 30,
+  "U0": 0.06,
+  "cylinder_center": [
+    450,
+    300
+  ],
+  "blockage_D_over_spacing": 0.05,
+  "tau": {
+    "40": 0.635,
+    "100": 0.554
+  },
+  "warmup_steps": 120000,
+  "record_steps": 30000,
+  "frame_every": 75,
+  "Re100_strouhal": 0.1664855195676664,
+  "Re100_period_steps": 3003.2641955793633,
+  "Re100_period_spread_steps": 0.0070834532621671595,
+  "Re100_n_periods": 9,
+  "Re40_recirculation_length_over_D": 2.313613825363556,
+  "Re40_steadiness_max_du_over_U0_per_1000_steps": 9.966506670881319e-09,
+  "max_mach": 0.13913753341460042,
+  "max_density_deviation": 0.007803154112089317
+}
