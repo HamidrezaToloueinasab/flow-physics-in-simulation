@@ -27,9 +27,10 @@ and a write-up that compares the numbers with published experiments and benchmar
 | Nº | Topic | Method | Key result | Folder |
 |:--:|---|---|---|---|
 | 01 | **When does a wake start to oscillate?** Flow past a circular cylinder at Re = 40 and Re = 100 | Lattice Boltzmann (D2Q9, BGK), Python + Numba | St = 0.166 (exp. 0.164); L/D = 2.31 (lit. 2.13–2.35) | [`episodes/01-vortex-street`](episodes/01-vortex-street) |
+| 02 | **Why isn't blood flow parabolic?** Pulsatile (Womersley) flow in a tube at α = 1, 5 and 15 | Unsteady Navier–Stokes, finite volumes + Crank–Nicolson, Python | Max. error vs exact solution 0.003 %; flow lags pressure by 84° at α = 15 | [`episodes/02-womersley`](episodes/02-womersley) |
 
 New episodes are added as the series continues. Topics in preparation include lid-driven cavity flow, Rayleigh–Bénard
-convection, microchannel heat sinks with nanofluids and pulsatile blood flow.
+convection, microchannel heat sinks with nanofluids and blood flow through a narrowed artery.
 
 ## Quick start
 

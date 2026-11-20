@@ -1,0 +1,58 @@
+{
+  "n": 400,
+  "steps_per_cycle": 4000,
+  "cycles": 60,
+  "results": [
+    {
+      "alpha": 1.0,
+      "max_profile_error_rel": 6.352067205523723e-07,
+      "flow_amplitude_vs_steady": {
+        "numerical": 0.9839332604815554,
+        "exact": 0.9855671334921254
+      },
+      "flow_phase_lag_deg": {
+        "numerical": 9.486512017119828,
+        "exact": 9.452663954089884
+      },
+      "wall_shear_lead_over_flow_deg": {
+        "numerical": 2.3901366178216676,
+        "exact": 2.382228277618365
+      },
+      "reverse_flow_near_wall_while_core_forward": true
+    },
+    {
+      "alpha": 5.0,
+      "max_profile_error_rel": 4.412500869754212e-06,
+      "flow_amplitude_vs_steady": {
+        "numerical": 0.2421334842166589,
+        "exact": 0.24179509379409145
+      },
+      "flow_phase_lag_deg": {
+        "numerical": 71.41289307143916,
+        "exact": 71.35284756456176
+      },
+      "wall_shear_lead_over_flow_deg": {
+        "numerical": 30.928348250856672,
+        "exact": 30.970662901579054
+      },
+      "reverse_flow_near_wall_while_core_forward": true
+    },
+    {
+      "alpha": 15.0,
+      "max_profile_error_rel": 3.0057036623403332e-05,
+      "flow_amplitude_vs_steady": {
+        "numerical": 0.03241428818892714,
+        "exact": 0.032359147666184036
+      },
+      "flow_phase_lag_deg": {
+        "numerical": 84.35775974415432,
+        "exact": 84.33836976066543
+      },
+      "wall_shear_lead_over_flow_deg": {
+        "numerical": 40.64561885832196,
+        "exact": 40.75521845300223
+      },
+      "reverse_flow_near_wall_while_core_forward": true
+    }
+  ]
+}
