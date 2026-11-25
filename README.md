@@ -29,6 +29,7 @@ and a write-up that compares the numbers with published experiments and benchmar
 | 01 | **When does a wake start to oscillate?** Flow past a circular cylinder at Re = 40 and Re = 100 | Lattice Boltzmann (D2Q9, BGK), Python + Numba | St = 0.166 (exp. 0.164); L/D = 2.31 (lit. 2.13–2.35) | [`episodes/01-vortex-street`](episodes/01-vortex-street) |
 | 02 | **Why isn't blood flow parabolic?** Pulsatile (Womersley) flow in a tube at α = 1, 5 and 15 | Unsteady Navier–Stokes, finite volumes + Crank–Nicolson, Python | Max. error vs exact solution 0.003 %; flow lags pressure by 84° at α = 15 | [`episodes/02-womersley`](episodes/02-womersley) |
 | 03 | **When does heated air start to move?** Rayleigh–Bénard convection at Ra = 1,500, 10⁴ and 10⁶ | Thermal lattice Boltzmann (D2Q9 + D2Q5, TRT), Python + Numba | Ra_c = 1707.7 (theory 1707.76); Nu within 0.3 % of Clever & Busse | [`episodes/03-rayleigh-benard`](episodes/03-rayleigh-benard) |
+| 04 | **Heated from the side, air never rests.** Natural convection in a square cavity at Ra = 10³–10⁶ | Thermal lattice Boltzmann (D2Q9 + D2Q5, TRT), Python + Numba | Mean Nu and peak velocities within 0.6 % of de Vahl Davis, and within 0.06 % of Le Quéré at Ra = 10⁶ | [`episodes/04-cavity`](episodes/04-cavity) |
 
 New episodes are added as the series continues. Topics in preparation include lid-driven cavity flow,
 microchannel heat sinks with nanofluids and blood flow through a narrowed artery.
@@ -53,7 +54,8 @@ flow-physics-in-simulation/
 ├── episodes/
 │   ├── 01-vortex-street/      solver, renderer, results and write-up for one episode
 │   ├── 02-womersley/
-│   └── 03-rayleigh-benard/
+│   ├── 03-rayleigh-benard/
+│   └── 04-cavity/
 ├── style/                     shared figure style: colours, typography (bundled OFL fonts) and the HT logo
 ├── requirements.txt
 ├── CITATION.cff
