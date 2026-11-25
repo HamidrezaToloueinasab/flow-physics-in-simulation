@@ -6,14 +6,14 @@
 
 <p align="center"><a href="media/vortex_street.mp4"><b>▶ Watch the video (MP4, 13 s)</b></a></p>
 
-Same cylinder, same fluid. Change one number, the Reynolds number Re = UD/ν, and the wake goes from perfectly
-still to rhythmically alive.
+Same cylinder. Change one number, the Reynolds number Re = UD/ν, and the wake goes from perfectly
+steady to rhythmically alive.
 
 | | Re = 40 | Re = 100 |
 |---|---|---|
 | Wake | Two steady, mirror-image vortices stay attached behind the cylinder | Vortices peel off alternately from the top and bottom: the **von Kármán vortex street** |
 | Measured quantity | Recirculation length **L/D = 2.31** | Strouhal number **St = fD/U = 0.166** |
-| Literature | 2.13 (experiment) to 2.35 (numerical) | 0.164 (experiment) |
+| Literature | reference solution 2.24; published values 2.13 to 2.35 (Gautier et al., 2013) | 0.164 (experiment) |
 
 The symmetric wake loses stability at a critical Reynolds number of about **Re ≈ 47** (Provansal et al., 1987) through a
 Hopf bifurcation. Above it, the wake oscillates at a well-defined frequency. Flow remains essentially two-dimensional
@@ -22,8 +22,9 @@ up to Re ≈ 190 (Williamson, 1996), so a 2D model is appropriate for both cases
 ## Why it matters
 
 - **Vortex flowmeters** infer the flow rate from the shedding frequency through the Strouhal number.
-- **Vortex-induced vibration** of chimneys, cables, risers and heat-exchanger tubes is driven by periodic shedding.
-- **Electronics cooling:** the unsteady wake behind pin fins increases mixing and convective heat transfer.
+- **Vortex-induced vibration** of tall structures such as chimneys can be driven by periodic shedding.
+- **Pin-fin cooling:** in arrays for turbine blades, shedding can help heat transfer on the pins themselves, while rows
+  further downstream can lose some (Ostanek & Thole, 2012).
 
 ## Method
 
@@ -51,9 +52,10 @@ Both Reynolds numbers run side by side on identical grids; only the viscosity (r
 | 20 | 20D | 15D | 0.1647 | 2.39 |
 | **30** | **20D** | **15D** | **0.1665** | **2.31** |
 
-**Lesson:** the distance from the inlet to the cylinder mattered far more than grid resolution. With the inlet only 5D
-upstream, the fixed-velocity inlet constrains the flow too close to the body and the Strouhal number is about 5 % high.
-Moving the inlet to 15D brings St within 1.5 % of experiment and places L/D inside the published range.
+**Lesson:** for the Strouhal number, the distance from the inlet to the cylinder mattered more than grid resolution: moving
+the inlet from 5D to 15D lowered St by 4 %, while refining from D = 20 to 30 changed it by 1 %. For L/D the two effects are
+similar (4 % and 3 %). The final St is 1.5 % above experiment and L/D is 3 % above the reference solution of 2.24. The grid
+changes show that the results are not fully grid-independent. Result files are stored for two of the four preliminary rows.
 
 Results of the final run are in [`results/results.json`](results/results.json), and two of the convergence runs are in
 [`results/convergence`](results/convergence).
@@ -95,7 +97,9 @@ Run `python cylinder_lbm.py --help` to list all options (grid size, domain exten
 4. B. Fornberg, *A numerical study of steady viscous flow past a circular cylinder*, J. Fluid Mech. **98** (1980) 819–855.
 5. S. C. R. Dennis, G.-Z. Chang, *Numerical solutions for steady flow past a circular cylinder at Reynolds numbers up to 100*, J. Fluid Mech. **42** (1970) 471–489.
 6. C. H. K. Williamson, *Vortex dynamics in the cylinder wake*, Annu. Rev. Fluid Mech. **28** (1996) 477–539.
-7. NASA Earth Observatory, *Swirly clouds in the Canaries*: [vortex streets in nature](https://earthobservatory.nasa.gov/images/151216/swirly-clouds-in-the-canaries).
+7. R. Gautier, D. Biau, E. Lamballais, *A reference solution of the flow over a circular cylinder at Re = 40*, Comput. Fluids **75** (2013) 103–111. [arXiv:1310.6641](https://arxiv.org/abs/1310.6641)
+8. J. K. Ostanek, K. A. Thole, *Effects of varying streamwise and spanwise spacing in pin-fin arrays*, ASME Turbo Expo 2012, GT2012-68127. [doi:10.1115/GT2012-68127](https://doi.org/10.1115/GT2012-68127)
+9. NASA Earth Observatory, *Swirly clouds in the Canaries*: [vortex streets in nature](https://earthobservatory.nasa.gov/images/151216/swirly-clouds-in-the-canaries).
 
 ---
 

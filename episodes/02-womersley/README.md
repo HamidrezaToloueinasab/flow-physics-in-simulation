@@ -16,7 +16,7 @@ across the radius R.
 
 | | α = 1 | α = 5 | α = 15 |
 |---|---|---|---|
-| Typical vessel | small vessels | ≈ common carotid artery | ≈ ascending aorta |
+| Compared with in-vivo values | below those listed for major arteries | just below the common carotid artery | low end of the ascending aorta |
 | Profile | parabolic, quasi-steady | flattening; near-wall flow reverses first | flat plug with thin wall layers |
 | Flow rate lags the pressure gradient by | 9.5° | 71.4° | 84.3° |
 | Oscillating flow / quasi-steady Poiseuille estimate | 0.99 | 0.24 | 0.032 |
@@ -30,7 +30,9 @@ In-vivo human values for comparison (Williamson et al., 2024): ascending aorta �
 - **Wall shear stress** oscillates out of phase with the flow. Regions of low, oscillating shear correlate with
   where atherosclerotic plaques form (Ku et al., 1985).
 - **Boundary conditions:** a parabolic (Poiseuille) inlet profile is the wrong choice for pulsatile CFD of large arteries.
-- **Viscous layer:** at α = 15 viscosity acts only in a Stokes layer of thickness √2·R/α ≈ 0.09 R.
+- **Viscous layer:** at α = 15 the Stokes layer has a characteristic thickness √2·R/α ≈ 0.09 R. Its effect reaches
+  further: going outwards, the velocity amplitude first departs from the core value by more than 5 % at r ≈ 0.70 R, and it
+  overshoots by 8 % at r ≈ 0.78 R.
 
 ## Model and method
 
@@ -39,7 +41,7 @@ In-vivo human values for comparison (Williamson et al., 2024): ascending aorta �
 | Flow | Fully developed, laminar, Newtonian, rigid circular tube |
 | Driving | Sinusoidal pressure gradient −∂p/∂x = G cos ωt |
 | Governing equation | Axial Navier–Stokes, which reduces exactly to α² ∂u/∂t = 4 cos t + (1/r) ∂/∂r (r ∂u/∂r) (non-dimensional) |
-| Discretisation | Second-order finite volumes in r (400 cells), Crank–Nicolson in time (4000 steps per cycle) |
+| Discretisation | Second-order finite volumes in r (400 cells), Crank–Nicolson in time (4800 steps per cycle) |
 | Start-up | From rest, 60 cycles, so the start-up transient has decayed to below 10⁻⁴ |
 | Outputs | Profiles over the last cycle; flow rate, wall shear stress and their phases |
 
@@ -51,9 +53,9 @@ $$u = \mathrm{Re}\left\{\frac{4}{i\alpha^2}\left[1-\frac{J_0(i^{3/2}\alpha r)}{J
 
 | α | Largest profile error (relative to peak) | Flow lag, simulation / exact |
 |:--:|:--:|:--:|
-| 1 | 0.0001 % | 9.49° / 9.45° |
-| 5 | 0.0004 % | 71.41° / 71.35° |
-| 15 | 0.0030 % | 84.36° / 84.34° |
+| 1 | 0.0001 % | 9.45° / 9.45° |
+| 5 | 0.0004 % | 71.35° / 71.35° |
+| 15 | 0.0030 % | 84.34° / 84.34° |
 
 <p align="center">
   <img src="media/validation.png" width="760" alt="Simulated profiles (dots) vs exact solution (lines) at eight phases">

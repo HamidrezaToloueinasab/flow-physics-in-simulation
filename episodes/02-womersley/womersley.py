@@ -75,7 +75,9 @@ def apply(lo, di, up, u):
     return out
 
 
-def solve(alpha, n=400, steps_per_cycle=4000, cycles=60, samples=120):
+def solve(alpha, n=400, steps_per_cycle=4800, cycles=60, samples=120):
+    if steps_per_cycle % samples:                      # samples must cover exactly one cycle
+        raise ValueError('steps_per_cycle must be a multiple of samples')
     r, lo, di, up = operator_bands(n)
     dt = 2 * np.pi / steps_per_cycle
     a2 = alpha ** 2
@@ -127,7 +129,7 @@ def main():
     ap.add_argument('--out', required=True)
     ap.add_argument('--alphas', type=float, nargs='+', default=[1.0, 5.0, 15.0])
     ap.add_argument('--n', type=int, default=400, help='radial cells')
-    ap.add_argument('--steps', type=int, default=4000, help='time steps per cycle')
+    ap.add_argument('--steps', type=int, default=4800, help='time steps per cycle')
     ap.add_argument('--cycles', type=int, default=60, help='cycles simulated from rest')
     a = ap.parse_args()
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
